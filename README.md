@@ -1,1 +1,4 @@
-### :point_right: This starter repo has moved to the [ionic-team/starters](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/tabs) repo! :point_left:
+npm install --save -dev to install node module for project
+npm install --save @ionic-native/camera for camera plugin
+npm install --save @ionic-native/geolocation for Geo location
+Run the project using command ionic serve --lab
