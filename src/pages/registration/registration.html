@@ -1,0 +1,121 @@
+<!--
+  Generated template for the RegistrationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary" >
+    <ion-title text-center>
+        Registration
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+  
+    <ion-content padding>
+
+      <form  #registerForm="ngForm">
+      <ion-item text-center>
+            <p> <img src = "{{imageURI}}" style="width:200px; height:200px"></p>
+            
+         <button ion-button icon-left (click)="presentActionSheet()">
+        <ion-icon name="camera"></ion-icon>Select Image
+      </button>
+      </ion-item>
+      <br>
+       <ion-row> <h5>Personal Info</h5></ion-row> 
+
+      <ion-row>
+       
+
+        <ion-col>
+          
+          <ion-list>
+
+            <ion-item>
+              <ion-input type="text" placeholder="FirstName*" name="FirstName" [(ngModel)]="registerCredentials.FirstName" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" placeholder="MiddleName" name="MiddleName" [(ngModel)]="registerCredentials.MiddleName"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="text" placeholder="LastName*" name="LastName" [(ngModel)]="registerCredentials.LastName" required></ion-input>
+            </ion-item>
+
+             <ion-item>
+              <ion-input type="text" placeholder="UserName*" name="UserName" [(ngModel)]="registerCredentials.UserName" required></ion-input>
+            </ion-item>
+
+
+            <ion-item>
+              <ion-input type="password" placeholder="Password*" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="password" placeholder="Confirm Password*" name="confirmation_password" [(ngModel)]="registerCredentials.confirmation_password" required></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row><br>
+
+      <ion-row> <h5>Contact details</h5></ion-row> 
+
+       <ion-row>
+       
+
+        <ion-col>
+          
+          <ion-list>
+
+            <ion-item>
+              <ion-input type="tel" placeholder="Mobile*" name="Mobile" [(ngModel)]="registerCredentials.Mobile" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input type="email" placeholder="Email*" name="Email" [(ngModel)]="registerCredentials.Email" #Email="ngModel" [pattern]="emailPattern" required ></ion-input>
+            </ion-item> 
+
+            <div [hidden]="Email.valid || Email.pristine"
+              class="alert alert-danger">
+                   Valid mail is required
+            </div>
+
+           
+
+             
+
+
+          </ion-list>
+
+        </ion-col>  
+       </ion-row>  
+
+       <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button color="dark" class="submit-btn" (click)="register()"  full type="submit" [disabled]="!registerForm.form.valid">Register</button>
+        </ion-col>
+      </ion-row>
+
+
+
+  </form>    
+</ion-content>
+ 
+
+
+
+
+ 
+
+
+
+
+     
+    
+
+

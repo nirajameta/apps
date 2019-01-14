@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary" >
+    <ion-title text-center>
+      Profile Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+
+  
+  <p> <img src = "{{picture}}" style="width:200px; height:200px"></p>
+
+  <form #formCtrl="ngForm">
+      <div align="center" *ngIf="formCtrl.form.valid">
+        <h1> Profile</h1>
+        </div>
+  <ion-list>
+      <ion-item>
+        <ion-label floating>FirstName</ion-label>
+        <ion-input type="text" [(ngModel)]="person.FirstName" name="FirstName" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>MiddleName</ion-label>
+        <ion-input type="text" [(ngModel)]="person.MiddleName" name="MiddleName"></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating>LastName</ion-label>
+        <ion-input type="text" [(ngModel)]="person.LastName" name="LastName" required></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating>UserName</ion-label>
+        <ion-input type="text" [(ngModel)]="person.UserName" name="UserName" required></ion-input>
+      </ion-item>
+
+       <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="person.password" name="password" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="person.confirmation_password" name="confirmation_password" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Mobile</ion-label>
+        <ion-input type="tel" [(ngModel)]="person.Mobile" name="Mobile" required></ion-input>
+      </ion-item>
+   
+     
+      
+  </ion-list>
+  <button color="dark" [disabled]="!formCtrl.form.valid" ion-button block (click)="save()">Save</button>
+  
+</form>
+</ion-content>
